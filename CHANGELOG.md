@@ -5,6 +5,17 @@
 All notable changes to this project will be documented in this file.
 
 
+## [Beta 0.1.2]
+### Added
+- Main loop
+  
+### Changed
+- `search()` function to accept argument and not use `input()` inside of it
+- - Updated README to match new version
+
+### Fixed
+- Fixed a typo in `qpCore` ("lodaing database" -> "loading database")
+
 
 ## [Beta 0.1.1]
 ### Added

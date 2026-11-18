@@ -48,11 +48,27 @@ def print_search_result(answer_html: str, link: str, score: float | None = None)
     print(f"{CYAN}╰{'─' * 65}{RESET}\n")
 
 
-if __name__ == '__main__':
-    if on_startup():
-        url = engine.search().get('db_url')
+def main_loop():
+    print("Search ready. Press CTRL+C or type 'q' to quit.\n")
+    while True:
+        try:
+            usr_s = input("Enter your search -> ")
+        except (KeyboardInterrupt, EOFError):
+            print("\nExiting...")
+            break
+        if not usr_s:
+            continue
+        if usr_s.lower() == 'q':
+            print("\nExiting...")
+            break
+        url = engine.search(usr_s).get('db_url')
         answer = get_answer(get_answer_id(find_id(url=url)))
         p_answ = format_so_answer(answer)
         print_search_result(p_answ, link=url)
-        
+
+
+
+if __name__ == '__main__':
+    if on_startup():
+        main_loop()
         

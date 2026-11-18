@@ -3,7 +3,6 @@ import os
 import httpx
 import json
 import duckdb
-#https://api.stackexchange.com/2.3/questions?pagesize=100&order=desc&sort=activity&site=stackoverflow
 
 dotenv.load_dotenv()
 API_KEY = os.getenv("API_KEY")

@@ -12,7 +12,7 @@ class Search:
     def loadDB(self):
         db = DataBase()
         cur = db.cur
-        print("lodaing database")
+        print("loading database")
         embbedings = cur.execute("SELECT id, url, embedding FROM question WHERE is_answered").fetchall()
 
         db_mappings= [{"db_id": row[0], "db_url": row[1]} for row in embbedings]
@@ -27,10 +27,9 @@ class Search:
         index.add(np_emb)
         return [index, db_mappings]
 
-    def search(self):
+    def search(self, user_search):
         index, db_mappings = self.loadDB()
         model = self.model
-        user_search = input("input your search -> ")
         q_emb = np.array(model.encode(user_search)).astype("float32")
         q_emb = q_emb.reshape(-1, 384)
         faiss.normalize_L2(q_emb)

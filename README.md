@@ -1,4 +1,4 @@
-# SOCosineSearch - Beta v.0.1.1
+# SOCosineSearch - Beta v.0.1.2
 > SOCosineSearch is a sentence transformers all-MiniLM-L6-v2 based search and parsing tool for StackOverflow in Python
 >
 > See full version history in [CHANGELOG](./CHANGELOG.md).
@@ -18,4 +18,4 @@
 > Using **[Stack Exchange Api](https://api.stackexchange.com/)** it collects questions (normally around 10k) in local DuckDB database, then transforms to vectors. When program starts it loads db in RAM, normalizes vectors for faster search, waits for input, transforms your input, finds most similar question with given answers from database and prints answer & link to similar question form StackOverflow
 
 ## Known Issues and Upcoming Features
-> You need to use Stack Exchange api key for data_dump due to daily limits, planning to add correct main Loop (for now app works one time with one input per start), сonsider performance optimizations for more than 10k objects
+> You need to use Stack Exchange api key for data_dump due to daily limits, сonsider performance optimizations for more than ~10k objects
