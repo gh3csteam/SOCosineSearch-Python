@@ -5,13 +5,22 @@
 All notable changes to this project will be documented in this file.
 
 
+## [Beta 0.1.3]
+
+### Added 
+-  `proceed_unencoded()` function added in `startapp` module to encode unencoded objects if there are any 
+
+### Changed
+- deleted test prints from `qp_on_startup` module
+- Updated README to match new version
+
 ## [Beta 0.1.2]
 ### Added
 - Main loop
   
 ### Changed
 - `search()` function to accept argument and not use `input()` inside of it
-- - Updated README to match new version
+-  Updated README to match new version
 
 ### Fixed
 - Fixed a typo in `qpCore` ("lodaing database" -> "loading database")

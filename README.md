@@ -1,4 +1,4 @@
-# SOCosineSearch - Beta v.0.1.2
+# SOCosineSearch - Beta v.0.1.3
 > SOCosineSearch is a sentence transformers all-MiniLM-L6-v2 based search and parsing tool for StackOverflow in Python
 >
 > See full version history in [CHANGELOG](./CHANGELOG.md).

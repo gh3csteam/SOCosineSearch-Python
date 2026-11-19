@@ -3,6 +3,7 @@ from query_processing.parsing.parse_url import find_id, get_answer_id, get_answe
 from app.on_startup import on_startup
 import html
 import re
+from query_processing.qp_on_startup import proceed_unencoded
 
 engine = Search()
 
@@ -66,9 +67,10 @@ def main_loop():
         p_answ = format_so_answer(answer)
         print_search_result(p_answ, link=url)
 
-
+    
 
 if __name__ == '__main__':
     if on_startup():
+        proceed_unencoded()
         main_loop()
         

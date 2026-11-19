@@ -7,13 +7,10 @@ def proceed_unencoded():
     model = SentenceTransformer('sentence-transformers/all-MiniLM-L6-v2')
     records = db.unencoded()
     if not records or records == []:
-        print('Either error occured or all vectors filled')
+        print('all vectors filled')
+        db.closeconn()
         return
     sentences = [(model.encode(i[1]).tolist(), i[0]) for i in records]
-    print (sentences)
     querry = ("UPDATE question SET embedding = ? WHERE ID = ?;")
     db.updateOne(query=querry, value=sentences)
     db.closeconn()
-
-
-proceed_unencoded() 
